@@ -1,0 +1,45 @@
+.btn {
+  display: block;
+  width: 100%;
+  max-width: max-content;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid #f48405;
+  background-color: #f48405;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+
+  @media (hover: hover) {
+    &:hover {
+      color: black;
+      background-color: #f7bf7f;
+      border-color: #f7bf7f;
+    }
+  }
+  &:active {
+    color: black;
+    background-color: #f7bf7f;
+    border-color: #f7bf7f;
+  }
+
+  &--empty {
+    color: #f48405;
+    background-color: transparent;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: #f48405;
+        color: white;
+      }
+    }
+    &:active {
+      background-color: #f48405;
+      color: white;
+    }
+  }
+  &--center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
