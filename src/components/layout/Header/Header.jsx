@@ -13,10 +13,10 @@ const Header = () => {
         <nav>
           <ul className={styles['header__nav-list']}>
             <li className={styles['header__nav-item']}>
-              <NavLink to='/jokes' activeClassName={styles['active']} className={styles['header__nav-link']}><span>Jokes</span></NavLink>
+              <NavLink to='/jokes' exact activeClassName={styles['active']} className={styles['header__nav-link']}><span>Jokes</span></NavLink>
             </li>
             <li className={styles['header__nav-item']}>
-              <NavLink to='/add-joke' activeClassName={styles['active']} className={styles['header__nav-link']}><span>Add a Joke</span></NavLink>
+              <NavLink to='/add-joke' exact activeClassName={styles['active']} className={styles['header__nav-link']}><span>Add a Joke</span></NavLink>
             </li>
           </ul>
         </nav>

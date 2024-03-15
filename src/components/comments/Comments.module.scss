@@ -1,0 +1,14 @@
+.comments {
+  text-align: center;
+
+  &__list-item {
+    border-bottom: 2px solid #f48405;
+    padding-bottom: 10px;
+    color: #5d5245;
+    font-size: 15px;
+
+    &:not(:first-child) {
+      padding-top: 10px;
+    }
+  }
+}

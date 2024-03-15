@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useHistory } from "react-router-dom";
-import JokeForm from "../components/jokes/JokeForm/JokeForm";
+import { addJoke } from "../assets/js/utils/firebase-api";
+import useHttp from "../assets/js/hooks/use-http";
+import JokeForm from "../components/jokes/JokeForm";
 import Section from "../components/layout/Section/Section";
 
 const AddJoke = () => {
   const history = useHistory();
+  const { sendHttpRequest, status } = useHttp(addJoke);
 
-  const addJokeHandler = joke => {
-    console.log(joke);
+  useEffect(() => {
+    if (status === 'completed') history.push('/jokes');
+  }, [status, history]);
 
-    history.push('/jokes');
-  };
+  const addJokeHandler = joke => sendHttpRequest(joke);
 
   return (
     <Section className='grow-center section-padding'>
-      <JokeForm onAddJoke={addJokeHandler}/>
+      <JokeForm isLoading={status === 'pending'} onAddJoke={addJokeHandler}/>
     </Section>
   );
 };

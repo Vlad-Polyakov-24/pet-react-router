@@ -9,10 +9,10 @@ const Footer = () => {
         <nav>
           <ul className={styles['footer__nav-list']}>
             <li>
-              <NavLink to='/jokes' activeClassName={styles['active']} className={styles['footer__nav-link']}>Jokes</NavLink>
+              <NavLink to='/jokes' exact activeClassName={styles['active']} className={styles['footer__nav-link']}>Jokes</NavLink>
             </li>
             <li>
-              <NavLink to='/add-joke' activeClassName={styles['active']} className={styles['footer__nav-link']}>Add a Joke</NavLink>
+              <NavLink to='/add-joke' exact activeClassName={styles['active']} className={styles['footer__nav-link']}>Add a Joke</NavLink>
             </li>
           </ul>
         </nav>

@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react';
 import { Prompt } from "react-router-dom";
-import styles from './JokeForm.module.scss';
-import Card from '../../UI/Card/Card';
-import Loader from '../../UI/Loader/Loader';
-import Button from "../../UI/Button/Button";
-import Input from "../../UI/Input/Input";
+import styles from '../UI/Form/Form.module.scss';
+import Card from '../UI/Card/Card';
+import Loader from '../UI/Loader/Loader';
+import Form from "../UI/Form/Form";
+import Button from "../UI/Button/Button";
+import Input from "../UI/Input/Input";
 
 const JokeForm = (props) => {
   const [formInFocus, setFormInFocus] = useState(false);
@@ -29,14 +30,14 @@ const JokeForm = (props) => {
     <>
       <Prompt when={formInFocus} message={location => 'Are you sure you want to leave the page? In this case, you will lose all data in the form!'}/>
       <Card>
-        <form className={styles.form} onSubmit={submitFormHandler} onFocus={focusFormHandler}>
+        <Form onSubmit={submitFormHandler} onFocus={focusFormHandler}>
           {props.isLoading && (<div className={styles.form__loading}><Loader/></div>)}
           <Input label='Topic' type='text' id='topic' name='topic' ref={topicInputRef}/>
           <Input label='Text' tag='textarea' rows='5' id='text' name='text' ref={textInputRef}/>
           <div className={styles.form__actions}>
             <Button type='submit' onClick={onClickHandler}>Add Joke</Button>
           </div>
-        </form>
+        </Form>
       </Card>
     </>
   );

@@ -1,5 +1,16 @@
 /* margins */
 
-.mt-20 {
-  margin-top: 20px;
+@each $abbr, $name in ("t": "top", "r": "right", "b": "bottom", "l": "left") {
+  @for $i from 1 through 100 {
+    .m#{$abbr}-#{$i} {
+      margin-#{$name}: 1px * $i;
+    }
+  }
+}
+
+/* paddings */
+
+.section-padding {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
